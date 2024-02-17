@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- info -->
+    <h4>
+        name: {{name | capfirst}} <br>
+        age: {{age}} <br>
+        adult : {% if age >= 18 %} <p>YES</p> {% else %} <p>NO</p> {% endif %}
+        favorite books : 
+        {% for book in favorite_books %} 
+            <p> {{book}} </p> 
+        {% endfor %}
+    </h4>
+
+
+    <h1>practice template filter</h1>
+    <p>adding 2 to my age:  {{ age | add:'2' }} </p>
+    <p> {{name | center:"15"}} </p>
+    <p> {{name | cut:"f"}} </p>
+    <P>today {{date | date:"D d M y"}} </P>
+    <P>{{ "" | default:"nothing" }}</P>
+
+    <p> {{ lst | dictsort:"age" }} </p>
+
+    {% for details in lst|dictsort:"name" %}
+        <p> {{details}} </p>
+    {% endfor %}
+
+    <p>is my age is even : {{age|divisibleby:'2'}} </p>
+
+    <p>{{ 123456789 | filesizeformat }}</p>
+
+    <p> {{ lst | first }} </p>
+
+    <p>{{ favorite_books | join:", " }}</p>
+
+    <p>{{ lst | last }}</p>
+
+    <p>{{ favorite_books | length }}</p>
+
+    <p>{{ "FARHAN" | lower }}</p>
+
+    <P>{{ name | make_list }}</P>
+
+    <p>{{ favorite_books | slice:":2" }}</p>
+
+    <p>{{ date | time:"H:i" }}</p>
+
+</body>
+</html>
